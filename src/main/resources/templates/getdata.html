@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Data</title>
+</head>
+<body>
+    <h1>Send Data to Kafka</h1>
+    <form action="/sendData" method="post">
+        <label for="message">Enter your message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Send Data</button>
+    </form>
+</body>
+</html>
