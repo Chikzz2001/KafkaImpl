@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafkademo
+  template:
+    metadata:
+      labels:
+        app: kafkademo
+    spec:
+      containers:
+        - name: kafkademo
+          image: kafkademo:latest
+          imagePullPolicy: Never #do not pull images from any registry as I am using k8 from docker desktop
+          ports:
+            - containerPort: 8080
